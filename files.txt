@@ -1,0 +1,18 @@
+Server Name: workstation
+FQDN Server: workstation.lab.example.com
+OS Vendor  : RedHat
+OS version : 8
+
+
+16
+
+34.36568055487916
+21
+6
+1
+6
+2
+[1, 6, 2, 3, 4, 5]
+
+
+

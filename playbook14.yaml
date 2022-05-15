@@ -1,0 +1,25 @@
+---
+- name: Example
+  hosts: localhost
+  tasks:
+     - name: Service status 
+       shell: systemctl status sshd 
+       register: output
+
+     - name: Display  YAML 
+       debug:
+         var: output | to_nice_yaml
+     - name: Display JSON
+       debug:
+         var: output | to_nice_json
+
+
+     - name: Display facts
+       shell: ansible servera.lab.example.com -m setup 
+       register: setup_output 
+
+     - name: Display setup output 
+       debug:
+         var: setup_output | to_nice_yaml | to_nice_json 
+
+

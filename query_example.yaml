@@ -1,0 +1,16 @@
+---
+- name: Example - lookup
+  hosts: localhost
+  tasks:
+     - name: Display values 
+       debug:
+               #msg: "These are the content of /tmp/data -  {{ query('file', '/tmp/data')}}"
+         msg: "These are the content of file -  {{ query('file', '/tmp/data', '/tmp/data2')}}"
+     - name: Display values stored  
+       debug:
+         msg: "{{ query('file', '/tmp/data', '/tmp/data2')}}"
+       register: output_putput
+
+     - name: Display output-output-1
+       debug:
+        var: output_putput

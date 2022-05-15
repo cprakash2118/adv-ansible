@@ -1,0 +1,11 @@
+- name: Example 
+  hosts: localhost
+  tasks:
+   - name: Replace 'ar' with asterisks
+     assert:
+       that:
+          - "'{{ 'marvin, arthur' | replace('ar','**') }}' is eq( 'm**vin, **thur' )"
+
+   - name: Display 
+     debug:
+       msg: "Output '{{ 'marvin, arthur' | replace('ar','**') }}'"

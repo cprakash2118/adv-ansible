@@ -1,0 +1,7 @@
+---
+- name: Example 
+  hosts: all
+  tasks:
+    - name: Print "Hello class."
+      shell: uptime
+      delegate_to: servera.lab.example.com

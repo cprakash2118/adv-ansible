@@ -1,0 +1,11 @@
+---
+- name: Add authorized keys
+  hosts: servera.lab.example.com
+  vars:
+    users:
+      - fred
+      - naoko
+  tasks:
+    - name: Add authorized keys
+      debug:
+        msg:  "{{ query('lines', 'ls /tmp/files') }}"

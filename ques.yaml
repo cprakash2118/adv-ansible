@@ -1,0 +1,10 @@
+---
+- name: Example 
+  hosts: all
+  tasks:
+    - name: Print "Hello class."
+      vars:
+         name: class
+      debug:
+        msg: "{{ lookup('template', 'my.template.j2') }}"
+      delegate_to: servera.lab.example.com

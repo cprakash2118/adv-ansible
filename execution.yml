@@ -1,0 +1,12 @@
+---
+- name: Testing 
+  hosts: localhost
+  tasks:
+     - name: Template a file to /etc/files.conf
+       template:
+         src: server_info.j2
+         dest: /home/student/git-repos/inventory-variables/files.txt
+         owner: student
+         group: student
+         mode: '0644'
+...

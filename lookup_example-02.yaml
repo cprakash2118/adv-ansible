@@ -1,0 +1,8 @@
+---
+- name: Example - lookup
+  hosts: localhost
+  tasks:
+     - name: Display values 
+       debug:
+               #msg: "These are the content of /tmp/data -  {{ lookup('file', '/tmp/data')}}"
+         msg: "These are the content of file -  {{ lookup('file', '/etc/hosts')}}"

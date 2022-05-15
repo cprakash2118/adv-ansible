@@ -1,0 +1,21 @@
+---
+- name: Example
+  hosts: localhost
+  vars:
+        hosts1:
+           - name: bastion
+             ip:
+               - 172.25.250.254
+               - 172.25.252.1
+           - name: classroom
+             ip:
+               - 172.25.252.254
+  tasks:
+    - name: Get the 'name' elements from the list of dictionaries in 'hosts'
+      assert:
+         that:
+            - "{{ hosts1 | json_query('[*].name') }} is eq( ['bastion','classroom'] )"
+
+    - name: Display 
+      debug: 
+         msg: "{{ hosts1 | json_query('[*].name') }}"

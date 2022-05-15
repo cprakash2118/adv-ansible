@@ -1,0 +1,23 @@
+---
+- name: Tag example
+  hosts: servera.lab.example.com
+  tasks: 
+   - block:
+     - name: 1st task 
+       debug:
+         msg: "This is 1st task"
+     - name: 2nd task 
+       debug:
+         msg: "This is 2rd task" 
+
+     - name: 3rd task 
+       debug:
+         msg: "This is 3rd task"
+
+     - name: 4th task 
+       debug:
+         msg: "This is 4th task"
+
+     tags: [task1, always]
+     #tags: [task1, never]
+...

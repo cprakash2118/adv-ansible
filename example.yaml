@@ -1,0 +1,8 @@
+- name: Example - Data Menipulation 
+  hosts: myself 
+  tasks:
+    - name: Check & testing 
+      assert:
+        that: 
+        #- "{{ [1,4,2,2] | unique | sort }} is eq ([1,2,4])" 
+          - "{{ [1,4,2,2,2,2,2] | unique  | sort }} is eq ([1,2,4])" 

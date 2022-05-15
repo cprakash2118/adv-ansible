@@ -1,0 +1,24 @@
+- name: Example - Data Menipulation 
+  hosts: myself 
+  vars:
+          rhel_version: 8
+          my_default: 9
+
+  tasks:
+    - name: Check users and 2ndry groups 
+      user: 
+        name: john1
+        groups: "{{ supplementary_groups['john1'] | default(omit) }}"
+
+    - name: Check & testing 
+      assert:
+        that: 
+        #- "{{ [1,4,2,2] | unique | sort }} is eq ([1,2,4])" 
+         # - "{{ [1,4,2,2,2,2,2] | unique  | sort }} is eq ([1,2,4])" 
+         #- "{{ rhel_version1 | mandatory }}"
+         #- "{{ my_value | default(my_default, True) }}"
+    - name: Display 
+      debug:
+        msg: "These are values,   {{ my_default }}"
+      ignore_errors: yes
+      

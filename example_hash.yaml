@@ -1,0 +1,18 @@
+---
+- name: Data 
+  hosts: localhost
+  tasks:
+   - name: the string's SHA-1 hash
+     vars:
+       Arthur: jone
+       expected: '8bae3f7d0a461488ced07b3e10ab80d018eb1d8c'
+     assert:
+       that:
+          - "'{{ 'Arthur' | hash('sha1') }}' is eq( expected )"
+          - "'{{ 'Arthur' | hash('sha1') }}'"
+   - name: Testing 
+     debug:
+      msg: "'{{ 'Arthur' | hash('sha1') }}'"
+      #msg: "'{{ Arthur | hash('sha1') }}' is eq( expected )"
+      #msg: "'{{ 'Arthur' | hash('sha1') }}' is eq( expected )"
+...
